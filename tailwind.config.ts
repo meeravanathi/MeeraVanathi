@@ -56,6 +56,10 @@ export default {
           peach: "hsl(var(--pastel-peach))",
           rose: "hsl(var(--pastel-rose))",
           sky: "hsl(var(--pastel-sky))",
+          yellow: "hsl(var(--pastel-yellow))",
+        },
+        status: {
+          online: "hsl(142 76% 36%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
