@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { MacButton } from "@/components/ui/mac-button";
+import { IOSButton } from "@/components/ui/ios-button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
@@ -29,51 +28,46 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-2xl border-b border-border/50" : ""
+        isScrolled ? "bg-background/80 backdrop-blur-xl shadow-ios" : ""
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
             href="#"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-lg font-semibold flex items-center gap-2"
+            className="text-xl font-semibold"
           >
-            <span className="text-xl">⚡</span>
-            <span>Alex.dev</span>
+            Portfolio
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-all"
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
               >
                 {link.name}
               </motion.a>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <MacButton variant="default" size="sm">
-              Hire Me 🚀
-            </MacButton>
+            <IOSButton variant="default" size="sm">
+              Hire Me
+            </IOSButton>
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover:bg-secondary rounded-full transition-colors"
+            className="md:hidden p-2"
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
         </div>
       </div>
@@ -85,25 +79,23 @@ const Navbar = () => {
           height: isMobileMenuOpen ? "auto" : 0,
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
-        transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-2xl border-t border-border/50"
+        transition={{ duration: 0.3 }}
+        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-t border-border"
       >
-        <div className="px-6 py-4 space-y-2">
+        <div className="px-6 py-4 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-xl transition-colors text-sm font-medium"
+              className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2">
-            <MacButton variant="default" size="sm" className="w-full">
-              Hire Me 🚀
-            </MacButton>
-          </div>
+          <IOSButton variant="default" size="sm" className="w-full">
+            Hire Me
+          </IOSButton>
         </div>
       </motion.div>
     </motion.nav>
