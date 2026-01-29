@@ -15,7 +15,7 @@ export default {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Inter',
+  				'Lato',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -28,7 +28,7 @@ export default {
   				'sans-serif'
   			],
   			serif: [
-  				'Lora',
+  				'EB Garamond',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -37,7 +37,7 @@ export default {
   				'serif'
   			],
   			mono: [
-  				'Space Mono',
+  				'Fira Code',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',
@@ -171,7 +171,7 @@ export default {
   			float: 'float 6s ease-in-out infinite'
   		},
   		boxShadow: {
-  			'ios': '0 2px 10px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.06)',
+  			ios: '0 2px 10px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.06)',
   			'ios-lg': '0 4px 20px rgba(0, 0, 0, 0.06), 0 8px 40px rgba(0, 0, 0, 0.08)',
   			'ios-xl': '0 8px 30px rgba(0, 0, 0, 0.08), 0 16px 60px rgba(0, 0, 0, 0.1)',
   			'2xs': 'var(--shadow-2xs)',
