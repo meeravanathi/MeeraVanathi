@@ -6,84 +6,81 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const stats = [
-    { number: "5+", label: "Years Experience" },
-    { number: "50+", label: "Projects Completed" },
-    { number: "30+", label: "Happy Clients" },
+  const highlights = [
+    { emoji: "🎓", label: "Computer Science", desc: "Stanford University" },
+    { emoji: "💼", label: "3+ Years", desc: "Experience" },
+    { emoji: "🚀", label: "20+", desc: "Projects Shipped" },
+    { emoji: "🌍", label: "Remote", desc: "Worldwide" },
   ];
 
   return (
     <section id="about" className="py-32 px-6" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {/* Image/Avatar Section */}
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="w-full aspect-square bg-gradient-to-br from-pastel-lavender via-pastel-mint to-pastel-peach rounded-3xl shadow-ios-xl" />
-              <div className="absolute inset-4 bg-card rounded-2xl shadow-ios flex items-center justify-center">
-                <span className="text-8xl">👨‍💻</span>
-              </div>
-            </motion.div>
+          {/* Section Tag */}
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-2xl">✦</span>
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">About Me</span>
           </div>
 
-          {/* Text Content */}
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-block px-4 py-2 bg-pastel-lavender rounded-full text-sm mb-6"
-            >
-              About Me
-            </motion.span>
+          {/* Main content */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Text */}
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-tight"
+              >
+                I'm passionate about building products that make a difference 🌟
+              </motion.h2>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-semibold tracking-tight mb-6"
-            >
-              Passionate about creating impactful designs
-            </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-muted-foreground text-lg leading-relaxed mb-6"
+              >
+                With a background in computer science and a love for design, I bridge the gap 
+                between aesthetics and functionality. I've worked with startups and established 
+                companies to create digital experiences that users love.
+              </motion.p>
 
-            <motion.p
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="text-muted-foreground text-lg leading-relaxed"
+              >
+                When I'm not coding, you'll find me exploring new coffee shops ☕️, 
+                reading about design systems 📚, or playing guitar 🎸
+              </motion.p>
+            </div>
+
+            {/* Highlights */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-muted-foreground text-lg mb-8 leading-relaxed"
+              className="grid grid-cols-2 gap-4"
             >
-              I'm a creative developer with a passion for building beautiful, functional web experiences. 
-              With expertise in modern frameworks and a keen eye for design, I transform ideas into 
-              digital products that users love.
-            </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-3 gap-6"
-            >
-              {stats.map((stat, index) => (
+              {highlights.map((item, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={item.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="text-center p-4 bg-secondary rounded-2xl"
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="p-6 bg-secondary/50 rounded-2xl border border-border/30"
                 >
-                  <div className="text-3xl font-semibold mb-1">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <span className="text-3xl mb-3 block">{item.emoji}</span>
+                  <div className="font-semibold mb-1">{item.label}</div>
+                  <div className="text-sm text-muted-foreground">{item.desc}</div>
                 </motion.div>
               ))}
             </motion.div>

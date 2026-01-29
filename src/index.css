@@ -2,28 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* iOS-inspired Design System with Soft Pastels */
+/* Mac/iOS-inspired Design System - Cosmos Studio inspired */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 0 0% 9%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 0 0% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 0 0% 4%;
 
-    --primary: 0 0% 9%;
+    --primary: 0 0% 4%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 4%;
 
-    --muted: 240 5% 96%;
+    --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
     --accent: 252 100% 96%;
@@ -32,25 +32,25 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
-    --ring: 252 60% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 4%;
 
     --radius: 1rem;
 
-    /* Pastel Palette */
-    --pastel-lavender: 252 100% 94%;
-    --pastel-mint: 158 64% 92%;
-    --pastel-peach: 20 100% 93%;
-    --pastel-rose: 340 100% 95%;
-    --pastel-sky: 200 100% 94%;
+    /* Pastel Palette - Softer, more subtle */
+    --pastel-lavender: 252 70% 95%;
+    --pastel-mint: 158 50% 94%;
+    --pastel-peach: 20 80% 94%;
+    --pastel-rose: 340 70% 95%;
+    --pastel-sky: 200 80% 95%;
+    --pastel-yellow: 45 80% 94%;
 
     /* Glass Effect */
-    --glass-bg: 0 0% 100% / 0.7;
-    --glass-border: 0 0% 100% / 0.5;
-    --glass-shadow: 0 0% 0% / 0.04;
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 0 0% 100% / 0.6;
 
-    /* Sidebar (keeping defaults) */
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -62,14 +62,14 @@
   }
 
   .dark {
-    --background: 0 0% 5%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 98%;
     --card: 0 0% 8%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary-foreground: 0 0% 4%;
     --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14%;
@@ -80,15 +80,15 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 252 60% 60%;
+    --ring: 0 0% 85%;
     --pastel-lavender: 252 30% 25%;
     --pastel-mint: 158 30% 20%;
     --pastel-peach: 20 30% 22%;
     --pastel-rose: 340 30% 22%;
     --pastel-sky: 200 30% 22%;
-    --glass-bg: 0 0% 10% / 0.7;
+    --pastel-yellow: 45 30% 22%;
+    --glass-bg: 0 0% 10% / 0.8;
     --glass-border: 0 0% 20% / 0.5;
-    --glass-shadow: 0 0% 0% / 0.2;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -111,34 +111,41 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card/70 backdrop-blur-xl border border-white/50 shadow-lg;
+    @apply bg-card/80 backdrop-blur-2xl border border-white/50 shadow-lg;
   }
 
-  .pastel-lavender {
-    background-color: hsl(var(--pastel-lavender));
+  .mac-button {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium 
+           bg-foreground text-background rounded-full transition-all duration-200
+           hover:opacity-90 active:scale-[0.98];
   }
 
-  .pastel-mint {
-    background-color: hsl(var(--pastel-mint));
+  .mac-button-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium 
+           bg-secondary text-foreground rounded-full border border-border/50
+           transition-all duration-200 hover:bg-secondary/80 active:scale-[0.98];
   }
 
-  .pastel-peach {
-    background-color: hsl(var(--pastel-peach));
+  .mac-button-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium 
+           text-foreground rounded-full transition-all duration-200
+           hover:bg-secondary active:scale-[0.98];
   }
 
-  .pastel-rose {
-    background-color: hsl(var(--pastel-rose));
-  }
-
-  .pastel-sky {
-    background-color: hsl(var(--pastel-sky));
-  }
+  .pastel-lavender { background-color: hsl(var(--pastel-lavender)); }
+  .pastel-mint { background-color: hsl(var(--pastel-mint)); }
+  .pastel-peach { background-color: hsl(var(--pastel-peach)); }
+  .pastel-rose { background-color: hsl(var(--pastel-rose)); }
+  .pastel-sky { background-color: hsl(var(--pastel-sky)); }
+  .pastel-yellow { background-color: hsl(var(--pastel-yellow)); }
 }
 
 @layer utilities {

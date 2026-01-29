@@ -2,18 +2,27 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const skills = [
-  { name: "React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "UI/UX Design", level: 88 },
-  { name: "Figma", level: 92 },
-  { name: "Next.js", level: 87 },
-];
-
-const technologies = [
-  "JavaScript", "Python", "GraphQL", "PostgreSQL", 
-  "AWS", "Docker", "Git", "Tailwind CSS"
+const skillCategories = [
+  {
+    title: "Frontend",
+    emoji: "🎨",
+    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Backend",
+    emoji: "⚙️",
+    skills: ["Node.js", "Python", "PostgreSQL", "GraphQL", "Redis"],
+  },
+  {
+    title: "Design",
+    emoji: "✏️",
+    skills: ["Figma", "UI/UX", "Design Systems", "Prototyping", "Animation"],
+  },
+  {
+    title: "Tools",
+    emoji: "🛠️",
+    skills: ["Git", "Docker", "AWS", "Vercel", "CI/CD"],
+  },
 ];
 
 const Skills = () => {
@@ -21,74 +30,55 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-32 px-6" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-32 px-6 bg-secondary/20" ref={ref}>
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-pastel-peach rounded-full text-sm mb-6">
-            Expertise
-          </span>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Skills & Technologies
-          </h2>
-        </motion.div>
+          {/* Section Tag */}
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-2xl">⚡</span>
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Skills</span>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Skill Bars */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {skills.map((skill, index) => (
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-12">
+            What I work with 🔧
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {skillCategories.map((category, catIndex) => (
               <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.2 + catIndex * 0.1 }}
+                className="bg-card rounded-2xl p-6 border border-border/30"
               >
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium">{skill.name}</span>
-                  <span className="text-muted-foreground">{skill.level}%</span>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-2xl">{category.emoji}</span>
+                  <h3 className="font-semibold text-lg">{category.title}</h3>
                 </div>
-                <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${skill.level}%` } : {}}
-                    transition={{ duration: 1, delay: 0.5 + index * 0.1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-foreground to-foreground/70 rounded-full"
-                  />
+
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: 0.4 + catIndex * 0.1 + skillIndex * 0.05 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2 bg-secondary/80 rounded-full text-sm font-medium cursor-default"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Technology Tags */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-wrap gap-3 content-start"
-          >
-            {technologies.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className="px-5 py-3 bg-card rounded-2xl shadow-ios text-sm font-medium cursor-default"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
