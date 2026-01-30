@@ -15,20 +15,17 @@ export default {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Inter',
-  				'ui-sans-serif',
-  				'system-ui',
   				'-apple-system',
   				'BlinkMacSystemFont',
-  				'Segoe UI',
-  				'Roboto',
+  				'SF Pro Display',
+  				'SF Pro Text',
+  				'Inter',
+  				'system-ui',
   				'Helvetica Neue',
   				'Arial',
-  				'Noto Sans',
   				'sans-serif'
   			],
   			serif: [
-  				'Lora',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -37,11 +34,9 @@ export default {
   				'serif'
   			],
   			mono: [
-  				'Space Mono',
-  				'ui-monospace',
-  				'SFMono-Regular',
-  				'Menlo',
+  				'SF Mono',
   				'Monaco',
+  				'Menlo',
   				'Consolas',
   				'Liberation Mono',
   				'Courier New',
@@ -171,9 +166,12 @@ export default {
   			float: 'float 6s ease-in-out infinite'
   		},
   		boxShadow: {
-  			ios: '0 2px 10px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.06)',
-  			'ios-lg': '0 4px 20px rgba(0, 0, 0, 0.06), 0 8px 40px rgba(0, 0, 0, 0.08)',
-  			'ios-xl': '0 8px 30px rgba(0, 0, 0, 0.08), 0 16px 60px rgba(0, 0, 0, 0.1)',
+  			ios: '0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+  			'ios-sm': '0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+  			'ios-md': '0 4px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.06)',
+  			'ios-lg': '0 8px 16px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.06)',
+  			'ios-xl': '0 16px 32px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06)',
+  			'ios-2xl': '0 24px 48px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08)',
   			'2xs': 'var(--shadow-2xs)',
   			xs: 'var(--shadow-xs)',
   			sm: 'var(--shadow-sm)',

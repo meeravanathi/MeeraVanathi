@@ -1,26 +1,9 @@
+/* SF Pro Font - iOS System Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
 
 /* iOS-inspired Design System with Soft Pastels */
 
@@ -99,19 +82,19 @@
   }
 
   .dark {
-    --background: 0 0% 15%;
+    --background: 15 15 23;
     --foreground: 248 0.3% 98.4%;
-    --card: 266 4% 20.8%;
+    --card: 20 20 31;
     --card-foreground: 248 0.3% 98.4%;
-    --popover: 266 4% 20.8%;
+    --popover: 20 20 31;
     --popover-foreground: 248 0.3% 98.4%;
     --primary: 256 1.3% 92.9%;
-    --primary-foreground: 266 4% 20.8%;
-    --secondary: 260 4.1% 27.9%;
+    --primary-foreground: 20 20 31;
+    --secondary: 25 25 40;
     --secondary-foreground: 248 0.3% 98.4%;
-    --muted: 260 4.1% 27.9%;
+    --muted: 25 25 40;
     --muted-foreground: 257 4% 70.4%;
-    --accent: 260 4.1% 27.9%;
+    --accent: 25 25 40;
     --accent-foreground: 248 0.3% 98.4%;
     --destructive: 22 19.1% 70.4%;
     --destructive-foreground: 248 0.3% 98.4%;
@@ -123,14 +106,14 @@
     --pastel-peach: 20 30% 22%;
     --pastel-rose: 340 30% 22%;
     --pastel-sky: 200 30% 22%;
-    --glass-bg: 0 0% 10% / 0.7;
-    --glass-border: 0 0% 20% / 0.5;
-    --glass-shadow: 0 0% 0% / 0.2;
-    --sidebar-background: 240 5.9% 10%;
+    --glass-bg: 20 20 31 / 0.8;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 0 0% 0% / 0.3;
+    --sidebar-background: 15 15 23;
     --sidebar-foreground: 248 0.3% 98.4%;
     --sidebar-primary: 264 24.3% 48.8%;
     --sidebar-primary-foreground: 248 0.3% 98.4%;
-    --sidebar-accent: 260 4.1% 27.9%;
+    --sidebar-accent: 25 25 40;
     --sidebar-accent-foreground: 248 0.3% 98.4%;
     --sidebar-border: 0 0% 100% / 10%;
     --sidebar-ring: 264 2.7% 55.1%;
@@ -139,15 +122,15 @@
     --chart-3: 70 18.8% 76.9%;
     --chart-4: 304 26.5% 62.7%;
     --chart-5: 16 24.6% 64.5%;
-    --sidebar: 266 4% 20.8%;
-    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --sidebar: 20 20 31;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.2);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.2);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.3);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.3), 0 8px 10px -1px hsl(0 0% 0% / 0.3);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -161,14 +144,26 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card/70 backdrop-blur-xl border border-white/50 shadow-lg;
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 shadow-ios-lg;
+  }
+
+  .ios-card {
+    @apply bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 shadow-ios rounded-2xl;
+  }
+
+  .ios-section {
+    @apply bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/20 dark:border-gray-700/20 shadow-ios-lg rounded-3xl;
   }
 
   .pastel-lavender {
@@ -189,6 +184,49 @@
 
   .pastel-sky {
     background-color: hsl(var(--pastel-sky));
+  }
+
+  /* iOS Typography */
+  .ios-title {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-foreground;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .ios-large-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .ios-body {
+    @apply text-base leading-relaxed text-muted-foreground;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .ios-caption {
+    @apply text-sm text-muted-foreground;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  /* Dark mode iOS shadows */
+  .dark .ios-card {
+    @apply shadow-lg;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .shadow-ios {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .shadow-ios-lg {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .shadow-ios-xl {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.4);
   }
 }
 
