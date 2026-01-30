@@ -91,7 +91,7 @@ const About = () => {
 
               <FluidDisplay delay={0.3}>
                 <p className="ios-body text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                  I'm an AI/ML specialist and full-stack developer currently interning at <strong className="text-blue-600 dark:text-blue-400">Ericsson</strong> as a Data Scientist. 
+                  I'm an AI/ML specialist and full-stack developer currently interning at <strong className="text-blue-600 dark:text-blue-400">GoML</strong> as a Fullstack AI Developer. 
                   I build autonomous AI agents for enterprise systems, craft responsive web applications, and develop intelligent solutions for real-world challenges. 
                   With expertise in Gen-AI, RAG pipelines, and secure backend development, I transform ideas into impactful digital products.
                 </p>

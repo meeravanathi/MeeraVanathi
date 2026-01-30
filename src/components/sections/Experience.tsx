@@ -9,6 +9,7 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const experiences = [
+    
     {
       company: "GoML",
       role: "Fullstack AI Developer Intern",
@@ -17,7 +18,75 @@ const Experience = () => {
       type: "Current Internship",
       description: "Developing full-stack AI applications with modern frameworks, implementing machine learning solutions, and building scalable web applications with AI integration.",
       technologies: ["Python", "AI/ML", "Fast API", "AWS bedrock"],
+      achievements: [
+        "Building end-to-end AI-powered web applications",
+        "Implementing machine learning models in production",
+      ],
+      color: "from-green-500 to-green-600"
     },
+    {
+      company: "Ericsson",
+      role: "Data Scientist Intern",
+      duration: "Jun 2025 - Dec 2025",
+      location: "Chennai, India - Remote",
+      type: "Internship",
+      description: "Built autonomous AI agents for enterprise systems and developed Gen-AI solutions with RAG pipelines for intelligent data processing and automation.",
+      technologies: ["Python", "TensorFlow", "RAG", "Gen-AI", "Enterprise Systems", "Machine Learning"],
+      achievements: [
+        "Developed autonomous AI agents for enterprise automation",
+        "Implemented RAG pipelines for intelligent data processing",
+        "Optimized ML models for production deployment",
+        "Enhanced enterprise system efficiency through AI solutions"
+      ],
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      company: "VENTU RENEWABLE PRIVATE LIMITED",
+      role: "Project Intern",
+      duration: "May - Jun 2025",
+      location: "Remote",
+      type: "Internship",
+      description: "Developed a comprehensive renewable energy website using modern web technologies, focusing on client-side functionality and server-side API development for sustainable energy solutions.",
+      technologies: ["React", "Express.js", "Node.js", "JavaScript", "Web Development", "Renewable Energy"],
+      achievements: [
+        "Built a complete renewable energy website for client requirements",
+        "Developed responsive React frontend with modern UI components",
+        "Implemented Express.js backend services for data management",
+        "Created seamless integration between frontend and backend systems"
+      ],
+      color: "from-emerald-500 to-emerald-600"
+    },
+    {
+      company: "BlueScope Information Technology",
+      role: "Java & Platform Developer Intern",
+      duration: "May - Jun 2025",
+      location: "Perungudi, Chennai",
+      type: "Internship",
+      description: "Designed and developed enterprise applications using Java and low-code platforms, focusing on backend services and dynamic UI components for improved user experience.",
+      technologies: ["Java", "Apache Tomcat", "JavaScript", "Fingress Platform", "Backend Development"],
+      achievements: [
+        "Designed a job application portal on Fingress (low-code/no-code platform), streamlining candidate submission workflows",
+        "Developed backend services for a banking web application using Java and Apache Tomcat server, improving data reliability",
+        "Enhanced front-end by integrating JavaScript-based dynamic UI components, resulting in smoother user experience"
+      ],
+      color: "from-orange-500 to-orange-600"
+    },
+    {
+      company: "Congruent Solutions",
+      role: "Trainee Programmer",
+      duration: "Jun - Jul 2024",
+      location: "Guindy, Chennai",
+      type: "Training Program",
+      description: "Developed interactive web applications using React and collaborated with cross-functional teams using modern development practices and version control systems.",
+      technologies: ["React", "React Router DOM", "Azure DevOps", "Git", "Jest", "JSON"],
+      achievements: [
+        "Developed an interactive participant portal for retirement schemes using React and React Router DOM, improving user accessibility",
+        "Collaborated with cross-functional teams through Azure DevOps using Git for seamless version control",
+        "Structured JSON-based configurations enabling dynamic, server-driven UI updates, boosting efficiency by nearly 30%",
+        "Implemented comprehensive Jest unit tests to validate UI components and ensure stability across multiple user scenarios"
+      ],
+      color: "from-purple-500 to-purple-600"
+    }
   ];
 
   const downloadResume = () => {
